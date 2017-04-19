@@ -21,6 +21,12 @@ use ReflectionClass;
  */
 class EnumTest extends TestCase
 {
+    public function testInterface()
+    {
+        $this->assertInstanceOf('MabeEnum\Enum', EnumBasic::get(EnumBasic::ONE));
+        $this->assertInstanceOf('MabeEnum\Enum', EnumInheritance::get(EnumInheritance::ONE));
+    }
+
     public function testGetNameReturnsConstantNameOfCurrentValue()
     {
         $enum = EnumBasic::get(EnumBasic::ONE);

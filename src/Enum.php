@@ -6,14 +6,7 @@ use ReflectionClass;
 use InvalidArgumentException;
 use LogicException;
 
-/**
- * Class to implement enumerations for PHP 5 (without SplEnum)
- *
- * @link http://github.com/marc-mabe/php-enum for the canonical source repository
- * @copyright Copyright (c) 2015 Marc Bennewitz
- * @license http://github.com/marc-mabe/php-enum/blob/master/LICENSE.txt New BSD License
- */
-abstract class Enum
+abstract class Enum implements EnumInterface
 {
     /**
      * The selected enumerator value
@@ -96,9 +89,7 @@ abstract class Enum
     }
 
     /**
-     * Get the value of the enumerator
-     *
-     * @return null|bool|int|float|string
+     * @inheritdoc
      */
     final public function getValue()
     {
@@ -106,9 +97,7 @@ abstract class Enum
     }
 
     /**
-     * Get the name of the enumerator
-     *
-     * @return string
+     * @inheritdoc
      */
     final public function getName()
     {
@@ -116,9 +105,7 @@ abstract class Enum
     }
 
     /**
-     * Get the ordinal number of the enumerator
-     *
-     * @return int
+     * @inheritdoc
      */
     final public function getOrdinal()
     {
@@ -141,10 +128,7 @@ abstract class Enum
     }
 
     /**
-     * Compare this enumerator against another and check if it's the same.
-     *
-     * @param mixed $enumerator
-     * @return bool
+     * @inheritdoc
      */
     final public function is($enumerator)
     {
